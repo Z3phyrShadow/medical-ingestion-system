@@ -1,0 +1,22 @@
+test_name,value,unit,reference_range
+White Blood Cell Count,7.2,X1O^9/L,4 - 11
+Red Blood Cell Count,4.5,X1O^12/L,4.2-5.9
+Hemoglobin,13.5,g/dL,13.2-16.6
+Hematocrit,4O.1,%,38.3 48.6
+Platelet Count,25O,X1O^9/L,15O 45O
+Glucose,9O,mg/dl,7O- 99
+Creatinine,O.9,mg/dL,"O.6 -1,.2"
+Urea,29,mg/dL,15 - 5O
+Cholesterol,185,mg/dL,O - 2OO
+Alanine Aminotransferase (ALT),25,U/L,7 56
+Aspartate Aminotransferase (AST),3O,U/L,8 - 48
+Alkaline Phosphatase (ALP),7O,U/L,4O 129
+Bilirubin,1.2,mg/dL,O.3-1.9
+Albumin,4.5,,3.5-5.5
+Glomerular Filtration Rate (GFR),9O,mLmin/1.73m?,6O - 12O
+Blood Urea Nitrogen (BUN),14,mg/dL,7 - 2O
+Sodium,14O,mmol/l,135 145
+Potassium,4.2,mmol/L,3.5-5.1
+Calcium,9.5,mg/dL,8.6 1O.2
+Thyroid Stimulating Hormone (TSH),2.1,plU/mL,O.5 - 4.5
+Free Thyroxine (FTA),1.2,ng/dL,"O.9-1,.7"
