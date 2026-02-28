@@ -1,22 +1,58 @@
 test_name,value,unit,reference_range
-White Blood Cell Count,7.2,X1O^9/L,4 - 11
-Red Blood Cell Count,4.5,X1O^12/L,4.2-5.9
-Hemoglobin,13.5,g/dL,13.2-16.6
-Hematocrit,4O.1,%,38.3 48.6
-Platelet Count,25O,X1O^9/L,15O 45O
-Glucose,9O,mg/dl,7O- 99
-Creatinine,O.9,mg/dL,"O.6 -1,.2"
-Urea,29,mg/dL,15 - 5O
-Cholesterol,185,mg/dL,O - 2OO
-Alanine Aminotransferase (ALT),25,U/L,7 56
-Aspartate Aminotransferase (AST),3O,U/L,8 - 48
-Alkaline Phosphatase (ALP),7O,U/L,4O 129
-Bilirubin,1.2,mg/dL,O.3-1.9
-Albumin,4.5,,3.5-5.5
-Glomerular Filtration Rate (GFR),9O,mLmin/1.73m?,6O - 12O
-Blood Urea Nitrogen (BUN),14,mg/dL,7 - 2O
-Sodium,14O,mmol/l,135 145
-Potassium,4.2,mmol/L,3.5-5.1
-Calcium,9.5,mg/dL,8.6 1O.2
-Thyroid Stimulating Hormone (TSH),2.1,plU/mL,O.5 - 4.5
-Free Thyroxine (FTA),1.2,ng/dL,"O.9-1,.7"
+Creatinine,1.0,mg/dL,0.70 - 1.30
+GFR Estimated,107,mL/min/1.73 m²,>59
+GFR Category,G1,,
+Urea,40.0,mg/dL,13.00 - 43.00
+Urea Nitrogen Blood,18.68,mg/dL,6.00 - 20.00
+BUN/Creatinine Ratio,19,,
+Uric Acid,7.0,mg/dL,3.50 - 7.20
+AST (SGOT),30.0,U/L,15.00 - 40.00
+ALT (SGPT),40.0,U/L,10.00 - 49.00
+GGTP,50.0,U/L,0 - 73
+Alkaline Phosphatase (ALP),100.0,U/L,30.00 - 120.00
+Bilirubin Total,1.0,mg/dL,0.30 - 1.20
+Bilirubin Direct,0.2,mg/dL,<0.3
+Bilirubin Indirect,0.8,mg/dL,<1.10
+Total Protein,8.0,g/dL,5.70 - 8.20
+Albumin,4.0,g/dL,3.20 - 4.80
+A : G Ratio,1.0,,0.90 - 2.00
+Globulin(Calculated),4.0,g/dL,2.0 - 3.5
+"Calcium, Total",9.0,mg/dL,8.70 - 10.40
+Phosphorus,4.0,mg/dL,2.40 - 5.10
+Sodium,140.0,mEq/L,136.00 - 145.00
+Potassium,4.0,mEq/L,3.50 - 5.10
+Chloride,100.0,mEq/L,98.00 - 107.00
+"Cholesterol, Total",100.0,mg/dL,<200.00
+Triglycerides,100.0,mg/dL,<150.00
+HDL Cholesterol,30.0,mg/dL,>40.00
+"LDL Cholesterol, Calculated",50.0,mg/dL,<100.00
+"VLDL Cholesterol,Calculated",20.0,mg/dL,<30.00
+Non-HDL Cholesterol,70,mg/dL,<130
+Glucose Fasting,80.0,mg/dL,70 - 100
+Vitamin B12; Cyanocobalamin,400.0,pg/mL,211.00 - 911.00
+"Vitamin D, 25 Hydroxy",150.0,nmol/L,75.00 - 250.00
+"T3, Total",1.0,ng/mL,0.60 - 1.81
+"T4, Total",7.0,µg/dL,5.01 - 12.45
+TSH,3.0,µIU/mL,0.550 - 4.780
+HbA1c,10.0,%,4.00 - 5.60
+Estimated average glucose (eAG),240,mg/dL,
+Hemoglobin,15.0,g/dL,13.00 - 17.00
+Packed Cell Volume (PCV),45.0,%,40.00 - 50.00
+RBC Count,5.0,10^6/mm³,4.50 - 5.50
+MCV,100.0,fL,83.00 - 101.00
+MCH,30.0,pg,27.00 - 32.00
+MCHC,33.0,g/dL,31.50 - 34.50
+Red Cell Distribution Width (RDW),12.0,%,11.60 - 14.00
+Total Leukocyte Count (TLC),5.0,10^3/mm³,4.00 - 10.00
+Segmented Neutrophils,50.0,%,40.00 - 80.00
+Lymphocytes,40.0,%,20.00 - 40.00
+Monocytes,5.0,%,2.00 - 10.00
+Eosinophils,4.0,%,1.00 - 6.00
+Basophils,1.0,%,<2.00
+Neutrophils,2.5,10^3/mm³,2.00 - 7.00
+Lymphocytes,2.0,10^3/mm³,1.00 - 3.00
+Monocytes,0.25,10^3/mm³,0.20 - 1.00
+Eosinophils,0.2,10^3/mm³,0.02 - 0.50
+Basophils,0.05,10^3/mm³,0.02 - 0.10
+Platelet Count,151,10^3/mm³,150.00 - 410.00
+Mean Platelet Volume,6.5,fL,6.5 - 12.0
