@@ -11,3 +11,10 @@ wheels/
 
 # Environment variables
 .env
+
+# Generated output files
+*.csv
+*.pdf
+
+# Test samples (large files)
+test-samples/

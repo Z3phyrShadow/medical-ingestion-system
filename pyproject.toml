@@ -1,13 +1,12 @@
 [project]
 name = "medical-ingestion-system"
 version = "0.1.0"
-description = "Add your description here"
+description = "Agentic pipeline for ingesting and structuring medical documents using LLMs and OCR"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "easyocr>=1.7.2",
     "google-generativeai>=0.8.6",
-    "ipykernel>=7.2.0",
     "opencv-python>=4.13.0.92",
     "pandas>=3.0.1",
     "pdf2image>=1.17.0",
