@@ -1,11 +1,15 @@
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class MedicalEntityExtractionAgent:
     """Agent 3 — Extracts structured medical entities from layout sections."""
 
-    def __init__(self, model):
-        self.model = model
+    def __init__(self, client, model_name: str = "gemini-2.5-flash"):
+        self.client = client
+        self.model_name = model_name
 
     def extract(self, layout_output: dict) -> dict:
         document_type = layout_output["document_type"]
@@ -52,14 +56,14 @@ Return ONLY valid JSON:
 }}
 """
 
-        response = self.model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json"},
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config={"response_mime_type": "application/json"},
         )
 
         try:
             return json.loads(response.text)
         except Exception:
-            print("Raw model output:")
-            print(response.text)
+            logger.error("Failed to parse Agent 3 response. Raw output:\n%s", response.text)
             raise

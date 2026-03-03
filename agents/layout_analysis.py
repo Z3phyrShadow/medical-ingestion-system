@@ -1,11 +1,15 @@
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class LayoutAnalysisAgent:
     """Agent 2 — Identifies document type and splits into logical sections."""
 
-    def __init__(self, model):
-        self.model = model
+    def __init__(self, client, model_name: str = "gemini-2.5-flash"):
+        self.client = client
+        self.model_name = model_name
 
     def analyze(self, doc_output: dict) -> dict:
         full_text = doc_output["full_text"]
@@ -41,14 +45,14 @@ Return ONLY valid JSON in this format:
 }}
 """
 
-        response = self.model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json"},
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config={"response_mime_type": "application/json"},
         )
 
         try:
             return json.loads(response.text)
         except Exception:
-            print("Raw model output:")
-            print(response.text)
+            logger.error("Failed to parse Agent 2 response. Raw output:\n%s", response.text)
             raise

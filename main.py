@@ -11,14 +11,24 @@ Examples:
 """
 
 import argparse
+import json
+import logging
 import os
+import sys
 
-import google.generativeai as genai
 from dotenv import load_dotenv
+from google import genai
 
 from pipeline import run_pipeline
 from exporters.csv_exporter import export_to_csv
 from exporters.pdf_exporter import export_to_pdf
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S",
+)
+logger = logging.getLogger(__name__)
 
 
 def main():
@@ -26,10 +36,10 @@ def main():
 
     api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        raise EnvironmentError("GOOGLE_API_KEY not found. Add it to your .env file.")
+        logger.error("GOOGLE_API_KEY not found. Add it to your .env file.")
+        sys.exit(1)
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    client = genai.Client(api_key=api_key)
 
     parser = argparse.ArgumentParser(
         description="Medical document ingestion pipeline",
@@ -50,12 +60,13 @@ def main():
     args = parser.parse_args()
 
     if not os.path.exists(args.file_path):
-        raise FileNotFoundError(f"Input file not found: {args.file_path}")
+        logger.error("Input file not found: %s", args.file_path)
+        sys.exit(1)
 
-    result = run_pipeline(args.file_path, model)
+    result = run_pipeline(args.file_path, client)
     normalized_output = result["normalization_validation"]
 
-    print("\n--- PIPELINE COMPLETE ---")
+    logger.info("Pipeline complete.")
 
     if args.export in ("csv", "both"):
         export_to_csv(normalized_output, filename=f"{args.output}.csv")
@@ -64,7 +75,6 @@ def main():
         export_to_pdf(normalized_output, filename=f"{args.output}.pdf")
 
     if args.export is None:
-        import json
         print(json.dumps(normalized_output, indent=2))
 
 

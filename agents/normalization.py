@@ -1,11 +1,15 @@
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class NormalizationValidationAgent:
     """Agent 4 — Normalizes and validates extracted medical data."""
 
-    def __init__(self, model):
-        self.model = model
+    def __init__(self, client, model_name: str = "gemini-2.5-flash"):
+        self.client = client
+        self.model_name = model_name
 
     def normalize(self, entity_output: dict) -> dict:
         prompt = f"""
@@ -53,14 +57,14 @@ Here is the data to normalize:
 {json.dumps(entity_output, indent=2)}
 """
 
-        response = self.model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json"},
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config={"response_mime_type": "application/json"},
         )
 
         try:
             return json.loads(response.text)
         except Exception:
-            print("Raw model output:")
-            print(response.text)
+            logger.error("Failed to parse Agent 4 response. Raw output:\n%s", response.text)
             raise
